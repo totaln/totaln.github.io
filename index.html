@@ -1,99 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional CV</title>
-  <style>
-    :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #34495e;
-      --text-color: #333;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      color: var(--text-color);
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .header {
-      background: var(--primary-color);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .section {
-      margin: 2rem 0;
-      padding: 1rem;
-      border-bottom: 2px solid var(--secondary-color);
-    }
-
-    .experience-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .skill-tag {
-      background: var(--secondary-color);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksandr Nikitin - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 11px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            min-height: 297mm;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .contact-info {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .contact-info a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .profile-text {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .job-header {
+            margin-bottom: 15px;
+            margin-left: -20px;
+            padding-left: 20px;
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+        }
+        
+        .job-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .company-name {
+            font-weight: 600;
+        }
+        
+        .company-info {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        
+        .date-range {
+            font-size: 12px;
+            color: #95a5a6;
+            font-weight: 500;
+        }
+        
+        .project-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #34495e;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        .achievement-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            background: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 11px;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+        
+        .tech-label {
+            font-weight: 600;
+            color: #34495e;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .skill-items {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #555;
+        }
+        
+        .certification-item, .education-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .cert-title, .edu-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        
+        .cert-date, .edu-details {
+            color: #7f8c8d;
+            font-size: 11px;
+        }
+        
+        .activity-item {
+            background: #e8f6ff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        
+        .activity-description {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        @media print {
+            body { font-size: 10px; }
+            .container { margin: 0; }
+            .main-content { padding: 30px; }
+            .section { margin-bottom: 25px; }
+        }
+    </style>
 </head>
 <body>
-<div class="header">
-  <h1>Your Name</h1>
-  <p>Professional Title</p>
-</div>
+    <div class="container">
+        <div class="header">
+            <h1 class="name">ALEKSANDR NIKITIN</h1>
+            <div class="contact-info">
+                The Hague, Netherlands | total.nikitin@outlook.com | 
+                <a href="https://www.linkedin.com/in/aleksandr-nikitin/">linkedin.com/in/aleksandr-nikitin</a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">Profile</h2>
+                <p class="profile-text">
+                    Systems engineer and engineering manager with a decade of experience in IT infrastructure and team leadership. I specialize in cloud migrations, automation, and platform engineering - with a track record of reducing operational costs while accelerating product delivery. My approach combines hands-on technical work with coaching engineers to build reliable, scalable platforms. Looking for a role that leverages both my technical expertise and passion for growing engineering talent.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Engineering Manager</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | Cloud & DevOps Department</div>
+                        <div class="date-range">March 2025 - Present</div>
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Led Cloud & DevOps engineering team (7 direct reports)</li>
+                        <li>Owned the full staffing lifecycle — hiring, onboarding, performance reviews, promotions, rotations, and offboarding</li>
+                        <li>Performed technical interviews (TIs), managerial interviews (MIs), performance reviews and assessment sessions from both technical and managerial sides</li>
+                        <li>Implemented refined grade matrix that improved employees' career path</li>
+                    </ul>
+                </div>
 
-<div class="container">
-  <div class="section">
-    <h2>Professional Summary</h2>
-    <p>Your professional summary goes here</p>
-  </div>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Lead DevOps Engineer</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | Global Japanese Pharma Client</div>
+                        <div class="date-range">August 2025 - Present</div>
+                    </div>
+                    <div class="project-title">Project: Enterprise AI chatbot to support internal workflows</div>
+                    <ul class="achievement-list">
+                        <li>Created new UAT environment from scratch using Terraform modules (EKS cluster, OpenSearch Domain, CloudFront integrations, Lambda functions, etc.)</li>
+                        <li>Created CI/CD pipelines for Frontend and Backend applications using Helm and GitHub Actions to let developers deploy faster</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> AWS EKS, Terraform, OpenSearch, AWS Lambda, Helm, GitHub Actions, Secrets Manager
+                    </div>
+                </div>
 
-  <div class="section">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Job Title</h3>
-      <p>Company Name | Date - Present</p>
-      <ul>
-        <li>Achievement 1</li>
-        <li>Achievement 2</li>
-      </ul>
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Lead DevOps Engineer</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | US-Based Biotech Client</div>
+                        <div class="date-range">January 2025 - July 2025</div>
+                    </div>
+                    <div class="project-title">Project: Containerization-as-a-Service platform (self-service onboarding)</div>
+                    <ul class="achievement-list">
+                        <li>Led 5-engineer Scrum team to design and deliver CaaS platform that reduced service onboarding friction</li>
+                        <li>Migrated three business-critical services from legacy VMs to AWS EKS</li>
+                        <li>Built reusable GitHub Actions pipelines and modular Terraform (OpenTofu) modules to standardize CI/CD and infrastructure provisioning across teams</li>
+                        <li>Delivered production-ready MySQL-in-EKS PoC</li>
+                        <li>Improved observability by introducing Helm-managed Grafana dashboards and standardized alerting rules</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> GitHub Actions, Terraform (OpenTofu), AWS EKS, MySQL, Helm, Grafana
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Lead DevOps Engineer</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | European Global Pharma Client</div>
+                        <div class="date-range">February 2024 - December 2024</div>
+                    </div>
+                    <div class="project-title">Project: New microservices implementation and platform enablement</div>
+                    <ul class="achievement-list">
+                        <li>Designed and delivered multi-language GitHub Actions pipelines for .NET, Python (FastAPI), and Java Spring, reducing deployment lead time by ~30%</li>
+                        <li>Automated infrastructure provisioning with AWS CDK (TypeScript)</li>
+                        <li>Implemented production-grade Helm charts and CI/CD flows that improved service reliability (high availability targets)</li>
+                        <li>Integrated DocumentDB & AWS Secrets Manager for pod-level credential rotation and secure secret lifecycle</li>
+                        <li>Rolled out Prometheus → Grafana monitoring</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> GitHub Actions, AWS CDK (TypeScript), AWS EKS, DocumentDB, Helm, Prometheus, Grafana, .NET, FastAPI, Spring
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Lead DevOps Engineer</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | Global Japanese Pharma Client</div>
+                        <div class="date-range">July 2023 - January 2024</div>
+                    </div>
+                    <div class="project-title">Project: Cloud migration - Azure → AWS serverless data platform</div>
+                    <ul class="achievement-list">
+                        <li>Executed migration of Azure Functions & Data Factory to AWS Lambda & Step Functions</li>
+                        <li>Built reusable Terraform modules for networking, IAM, and serverless services that were adopted across teams for repeatable deployments</li>
+                        <li>Orchestrated cutover with 5-person cross-functional team and zero critical incidents</li>
+                        <li>Implemented shared optimized Lambda layers and standardized logging + tracing for downstream analytics</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> AWS Lambda, Step Functions, Terraform, AWS RDS, Secrets Manager, Azure Data Factory (migration)
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">DevOps Team Leader</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> | US Molecular Diagnostics Company</div>
+                        <div class="date-range">December 2021 - June 2023</div>
+                    </div>
+                    <div class="project-title">Project: Self-service platform and cloud-first architecture patterns</div>
+                    <ul class="achievement-list">
+                        <li>Line-managed and coached distributed SRE/DevOps squad of 10 engineers, set team goals, run regular 1:1s, and led performance/career reviews</li>
+                        <li>Designed architecture and migration plan for moving microservices from HashiCorp Nomad to AWS ECS (Fargate) and produced PoC for EKS (Fargate)</li>
+                        <li>Built 10+ reusable Terraform modules to standardize provisioning and enforce best practices across teams</li>
+                        <li>Developed secure end-to-end encryption and service-auth patterns using CloudFront, Lambda, AppMesh, CloudMap, AWS RAM, and ACM Private CA</li>
+                        <li>Owned Terraform code reviews and cross-team customer communications to align platform delivery with product needs</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> AWS (ECS/EKS Fargate, CloudFront, IAM, AppMesh, Lambda, S3), Terraform, GitLab CI, Datadog, Docker, DynamoDB
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Lead Systems Engineer</div>
+                        <div class="company-info"><span class="company-name">EPAM Systems</span> | Multiple US-Based Clients</div>
+                        <div class="date-range">March 2018 - December 2021</div>
+                    </div>
+                    <div class="project-title">Project: System engineering, automation and release management</div>
+                    <ul class="achievement-list">
+                        <li>Led PoC design and transition to production, owning architecture documentation and stakeholder alignment</li>
+                        <li>Managed and mentored multi-person engineering team, conducted technical interviews and onboarding</li>
+                        <li>Automated infrastructure and operational processes using Python, Bash, and PowerShell (IIS automation)</li>
+                        <li>Implemented IaC with AWS CloudFormation and coordinated releases using Octopus Deploy + Azure DevOps/Jenkins</li>
+                        <li>Delivered service-discovery and feature-flagging (Consul) and established monitoring & logging stack to improve observability and incident response</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> AWS, CloudFormation, Python, Bash, PowerShell, Octopus Deploy, Azure DevOps, GitLab, Jenkins, Consul, Prometheus, Grafana, Splunk, Kibana
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Senior Deployment Engineer</div>
+                        <div class="company-info"><span class="company-name">Total Objects</span></div>
+                        <div class="date-range">December 2015 - February 2018</div>
+                    </div>
+                    <div class="project-title">Project: Release automation and environment provisioning</div>
+                    <ul class="achievement-list">
+                        <li>Led deployment engineering team and improved product delivery process, reducing time-to-market for releases</li>
+                        <li>Managed upgrade/migration of Microsoft TFS and provisioned Windows/IIS + MS SQL environments for new releases</li>
+                        <li>Authored onboarding documentation and runbooks to accelerate new hire ramp-up and reduce handover friction</li>
+                        <li>Coordinated with development teams to improve communication and release readiness</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-label">Technologies:</span> MS TFS, Windows Server/IIS, MS SQL, PowerShell
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Skills & Abilities</h2>
+                <div class="skills-grid">
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-title">Cloud Platforms</div>
+                            <div class="skill-items">AWS, GCP & Azure (experience)</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">IaC & Automation</div>
+                            <div class="skill-items">Terraform/OpenTofu, AWS CDK, Helm, GitHub Actions</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">Container Platforms</div>
+                            <div class="skill-items">EKS, ECS/Fargate, Docker</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">Observability & Security</div>
+                            <div class="skill-items">Prometheus, Grafana, OpenSearch, Datadog, CrowdStrike, logging & alerting playbooks</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">Languages & Scripting</div>
+                            <div class="skill-items">TypeScript (CDK), Python, Bash, PowerShell</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-title">Data & Serverless</div>
+                            <div class="skill-items">Lambda, Step Functions, DocumentDB, MySQL</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">Engineering Management</div>
+                            <div class="skill-items">Line manager for 7 engineers; end-to-end hiring, onboarding, career development, promotions, rotations and offboarding</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-title">Platform Practices</div>
+                            <div class="skill-items">Reusable modules, CI/CD standardization, cost optimization and migration strategy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certifications & Recognition</h2>
+                <div class="certification-item">
+                    <div class="cert-title">AWS Certified Solutions Architect – Professional | 2023</div>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-title">AWS Certified DevOps Engineer – Professional | 2021</div>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-title">AWS Certified Solutions Architect – Associate | 2021</div>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-title">AWS Community Builders (Serverless) | October 2021 - October 2022</div>
+                    <div class="cert-date">Selected for contributions and promoting AWS tools in the DevOps Russia community</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="edu-title">Master's Degree | Aircraft Instruments and Measuring Computer Systems</div>
+                    <div class="edu-details">St. Petersburg State University of Aerospace Instrumentation, Russia | 2009 - 2014</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Activities & Interests</h2>
+                <div class="activity-item">
+                    <div class="activity-description">
+                        I am a travel and hiking enthusiast, active in team sports, and always curious about high-tech trends and AI. In my free time, I'm working on mastering frontend and backend development skills. I also enjoy exploring new cuisines and visiting friends across Europe.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill-tag">Skill 1</span>
-      <span class="skill-tag">Skill 2</span>
-      <span class="skill-tag">Skill 3</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Education</h2>
-    <h3>Degree Name</h3>
-    <p>University Name | Graduation Year</p>
-  </div>
-</div>
 </body>
 </html>
