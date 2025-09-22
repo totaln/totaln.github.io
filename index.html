@@ -222,10 +222,35 @@
         }
         
         @media print {
-            body { font-size: 10px; }
-            .container { margin: 0; }
-            .main-content { padding: 30px; }
-            .section { margin-bottom: 25px; }
+            body { 
+                font-size: 10px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .container { 
+                margin: 0;
+                box-shadow: none;
+            }
+            .main-content { 
+                padding: 25px;
+            }
+            .section { 
+                margin-bottom: 25px;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .experience-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            .header {
+                page-break-after: avoid;
+            }
+            .section-title {
+                page-break-after: avoid;
+                margin-top: 15px;
+            }
         }
     </style>
 </head>
@@ -253,7 +278,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Engineering Manager</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | Cloud & DevOps Department</div>
+                        <div class="company-info"><span class="company-name">Quantori</span> (Life Sciences Technology Consulting) | Cloud & DevOps Department</div>
                         <div class="date-range">March 2025 - Present</div>
                     </div>
                     <ul class="achievement-list">
@@ -358,7 +383,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead Systems Engineer</div>
-                        <div class="company-info"><span class="company-name">EPAM Systems</span> | Multiple US-Based Clients</div>
+                        <div class="company-info"><span class="company-name">EPAM Systems</span> (Global Technology Consulting) | Multiple US-Based Clients</div>
                         <div class="date-range">March 2018 - December 2021</div>
                     </div>
                     <div class="project-title">Project: System engineering, automation and release management</div>
@@ -377,7 +402,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Senior Deployment Engineer</div>
-                        <div class="company-info"><span class="company-name">Total Objects</span></div>
+                        <div class="company-info"><span class="company-name">Total Objects</span> (Software Development Company - UK Insurance Market)</div>
                         <div class="date-range">December 2015 - February 2018</div>
                     </div>
                     <div class="project-title">Project: Release automation and environment provisioning</div>
