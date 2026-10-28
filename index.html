@@ -105,33 +105,87 @@
             .tech-stack, .activity-item { background: #f3f7f6; }
             .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
+
+        /* Employer-led layout with supporting details alongside experience. */
+        .container { max-width: 1180px; }
+        .header { padding: 38px 48px 30px; background: #fff; color: var(--ink); border-top: 5px solid var(--accent); border-bottom: 1px solid var(--line); }
+        .name { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.025em; margin-bottom: 10px; }
+        .headline { color: var(--accent); font-size: 1rem; margin: 0 0 16px; }
+        .contact-info { color: var(--muted); font-size: .88rem; }
+        .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 10px; }
+        .header-top .name { margin: 0; }
+        .print-button { flex-shrink: 0; padding: 9px 14px; border: 1px solid var(--accent); border-radius: 5px; color: var(--accent); background: white; font: inherit; font-size: .82rem; cursor: pointer; }
+        .print-button:hover { background: var(--wash); }
+        .print-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+        .main-content { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 32px 42px; padding: 32px 48px 48px; }
+        .main-content > .section:first-child { grid-column: 1 / -1; }
+        .main-content > .section { margin-top: 0; }
+        .profile-text { max-width: none; font-size: 1rem; line-height: 1.7; }
+        .section-title { margin-bottom: 18px; }
+        .sidebar { border-left: 1px solid var(--line); padding-left: 26px; font-size: .85rem; min-width: 0; }
+        .sidebar .section + .section { margin-top: 30px; }
+        .skills-grid { display: block; }
+        .employer { margin-bottom: 32px; }
+        .employer h3 { margin: 0 0 22px; font-size: 1.3rem; line-height: 1.4; }
+        .employer h3 span { display: block; margin-top: 3px; font-size: .8rem; font-weight: 500; color: var(--muted); }
+        .experience-item { padding-left: 18px; }
+        .experience-item + .experience-item { margin-top: 26px; }
+        .job-title { font-size: 1.05rem; }
+        .company-info, .project-title { font-size: .9rem; }
+        .tech-stack { padding: 0; border-radius: 0; background: none; font-size: .8rem; color: var(--muted); }
+        .activity-item { padding: 0; background: none; }
+        @media (max-width: 850px) {
+            .container { margin: 0; }
+            .header { padding: 30px 24px; }
+            .main-content { display: block; padding: 28px 24px; }
+            .main-content > .section + .section { margin-top: 32px; }
+            .sidebar { margin-top: 36px; padding: 0; border: 0; }
+            .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 500px) { .skills-grid { display: block; } }
+        @media print {
+            .header { padding: 0 0 16px; border-top: 0; }
+            .main-content { display: block; padding: 20px 0 0; }
+            .main-content > .section + .section { margin-top: 24px; }
+            .sidebar { margin-top: 24px; border: 0; padding: 0; }
+            .skills-grid { display: grid; grid-template-columns: 1fr 1fr; }
+            .print-button { display: none; }
+            .employer h3, .job-header, .project-title { break-after: avoid; }
+            .skill-category, .certification-item, .education-item { break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="name">ALEKSANDR NIKITIN</h1>
+            <div class="header-top">
+                <h1 class="name">Aleksandr Nikitin</h1>
+                <button class="print-button" type="button" onclick="window.print()">Print / Save PDF</button>
+            </div>
+            <p class="headline">Cloud &amp; data platforms · AI-assisted engineering · Technical leadership</p>
             <div class="contact-info">
-                The Hague, Netherlands | total.nikitin@outlook.com | 
+                The Hague, Netherlands · <a href="mailto:folksy-plug2v@icloud.com">folksy-plug2v@icloud.com</a> ·
                 <a href="https://www.linkedin.com/in/aleksandr-nikitin/">linkedin.com/in/aleksandr-nikitin</a>
             </div>
         </div>
         
-        <div class="main-content">
+        <main class="main-content">
             <div class="section">
                 <h2 class="section-title">Profile</h2>
                 <p class="profile-text">
-                    Cloud and data platform engineer with a decade of experience delivering cloud infrastructure, automation, and production data platforms. I combine hands-on engineering across GCP, AWS, and Azure with platform design, infrastructure as code, CI/CD, AI-assisted development, and technical leadership. Currently building governed supply chain data products and integrations for Rituals through Valcon.
+                    Cloud and data platform engineer with a decade of experience across GCP, AWS, and Azure. I combine platform engineering and technical leadership with AI-assisted development. Currently delivering governed supply chain data products for Rituals through Valcon.
                 </p>
             </div>
             
             <div class="section">
                 <h2 class="section-title">Experience</h2>
                 
+                <section class="employer">
+                    <h3>Valcon <span>Senior Principal · February 2026 – Present</span></h3>
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Senior Cloud Data Engineer</div>
-                        <div class="company-info"><span class="company-name">Valcon</span> | Rituals</div>
+                        <div class="company-info">Client: Rituals</div>
                         <div class="date-range">February 2026 - Present</div>
                     </div>
                     <div class="project-title">Project: Enterprise supply chain data products on Google Cloud</div>
@@ -149,8 +203,7 @@
 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="job-title">Senior Principal</div>
-                        <div class="company-info"><span class="company-name">Valcon</span> | Intake Application</div>
+                        <div class="job-title">Intake Application</div>
                     </div>
                     <div class="project-title">Project: AI-enabled three-tier web application on Azure</div>
                     <ul class="achievement-list">
@@ -162,10 +215,13 @@
                     </div>
                 </div>
 
+                </section>
+                <section class="employer">
+                    <h3>Quantori <span>December 2021 – January 2026</span></h3>
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Engineering Manager</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> (Life Sciences Technology Consulting) | Cloud & DevOps Department</div>
+                        <div class="company-info">Cloud & DevOps Department</div>
                         <div class="date-range">March 2025 - January 2026</div>
                     </div>
                     <ul class="achievement-list">
@@ -179,7 +235,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead DevOps Engineer</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | Global Japanese Pharma Client</div>
+                        <div class="company-info">Global Japanese Pharma Client</div>
                         <div class="date-range">August 2025 - January 2026</div>
                     </div>
                     <div class="project-title">Project: Enterprise AI chatbot to support internal workflows</div>
@@ -195,7 +251,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead DevOps Engineer</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | US-Based Biotech Client</div>
+                        <div class="company-info">US-Based Biotech Client</div>
                         <div class="date-range">January 2025 - July 2025</div>
                     </div>
                     <div class="project-title">Project: Containerization-as-a-Service platform (self-service onboarding)</div>
@@ -214,7 +270,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead DevOps Engineer</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | European Global Pharma Client</div>
+                        <div class="company-info">European Global Pharma Client</div>
                         <div class="date-range">February 2024 - December 2024</div>
                     </div>
                     <div class="project-title">Project: New microservices implementation and platform enablement</div>
@@ -233,7 +289,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead DevOps Engineer</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | Global Japanese Pharma Client</div>
+                        <div class="company-info">Global Japanese Pharma Client</div>
                         <div class="date-range">July 2023 - January 2024</div>
                     </div>
                     <div class="project-title">Project: Cloud migration - Azure → AWS serverless data platform</div>
@@ -251,7 +307,7 @@
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">DevOps Team Leader</div>
-                        <div class="company-info"><span class="company-name">Quantori</span> | US Molecular Diagnostics Company</div>
+                        <div class="company-info">US Molecular Diagnostics Company</div>
                         <div class="date-range">December 2021 - June 2023</div>
                     </div>
                     <div class="project-title">Project: Self-service platform and cloud-first architecture patterns</div>
@@ -267,6 +323,7 @@
                     </div>
                 </div>
 
+                </section>
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Lead Systems Engineer</div>
@@ -305,6 +362,7 @@
                 </div>
             </div>
 
+            <aside class="sidebar" aria-label="Skills and background">
             <div class="section">
                 <h2 class="section-title">Skills & Abilities</h2>
                 <div class="skills-grid">
@@ -384,7 +442,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </aside>
+        </main>
     </div>
 </body>
 </html>
